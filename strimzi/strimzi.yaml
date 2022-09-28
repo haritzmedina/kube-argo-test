@@ -1,10 +1,16 @@
-project: default
-source:
-  repoURL: 'https://strimzi.io/charts'
-  targetRevision: 0.31.1
-  helm:
-    releaseName: strimzi
-  chart: strimzi-kafka-operator
-destination:
-  server: 'https://kubernetes.default.svc'
+apiVersion: arogproj.io/v1alpha1
+kind: Application
+metadata:
+  name: strimzi
   namespace: strimzi
+spec:
+  project: default
+  source:
+    repoURL: 'https://strimzi.io/charts'
+    targetRevision: 0.31.1
+    helm:
+      releaseName: strimzi
+    chart: strimzi-kafka-operator
+  destination:
+    server: 'https://kubernetes.default.svc'
+    namespace: strimzi
