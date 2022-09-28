@@ -11,6 +11,3 @@ spec:
     helm:
       releaseName: strimzi
     chart: strimzi-kafka-operator
-  destination:
-    server: 'https://kubernetes.default.svc'
-    namespace: strimzi
