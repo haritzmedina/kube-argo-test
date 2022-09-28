@@ -1,0 +1,10 @@
+project: default
+source:
+  repoURL: 'https://strimzi.io/charts'
+  targetRevision: 0.31.1
+  helm:
+    releaseName: strimzi
+  chart: strimzi-kafka-operator
+destination:
+  server: 'https://kubernetes.default.svc'
+  namespace: strimzi
