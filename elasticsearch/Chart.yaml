@@ -1,24 +1,12 @@
-project: default
-source:
-  repoURL: 'https://helm.elastic.co'
-  targetRevision: 7.17.3
-  helm:
-    valueFiles:
-      - values.yaml
-    parameters:
-      - name: clusterHealthCheckParams
-        value: wait_for_status=yellow&timeout=1s
-      - name: minimumMasterNodes
-        value: '1'
-      - name: replicas
-        value: '1'
-      - name: readinessProbe.initialDelaySeconds
-        value: '11'
-  chart: elasticsearch
-destination:
-  server: 'https://kubernetes.default.svc'
-  namespace: elasticsearch-master
-syncPolicy:
-  automated: {}
-  syncOptions:
-    - Replace=true
+apiVersion: v1
+description: Official Elastic helm chart for Elasticsearch
+home: https://github.com/elastic/helm-charts
+maintainers:
+  - email: helm-charts@elastic.co
+    name: Elastic
+name: elasticsearch
+version: 8.5.1
+appVersion: 8.5.1
+sources:
+  - https://github.com/elastic/elasticsearch
+icon: https://helm.elastic.co/icons/elasticsearch.png
