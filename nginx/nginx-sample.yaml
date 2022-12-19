@@ -29,5 +29,5 @@ spec:
     app.kubernetes.io/name: nginx
   ports:
     - protocol: TCP
-      port: 80
-      targetPort: 9376
+      port: 9763
+      targetPort: 80
